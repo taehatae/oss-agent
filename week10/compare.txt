@@ -1,0 +1,80 @@
+# 규칙 없이
+# 문체 : 개조식 아님.
+# 만들기 전에 무엇을 할지 먼저 말했나? : X
+# 문서 맨 위에 "작성/확인"줄이 있나? : X
+# 어제 정해 온 "내 규칙"에 해당하는 행동을 했나? : X
+
+# 규칙 있이
+# 문체 : 개조식
+# 만들기 전에 무엇을 할지 먼저 말했나? : O
+# 문서 맨 위에 "작성/확인"줄이 있나? : O
+# 어제 정해 온 "내 규칙"에 해당하는 행동을 했나? : O
+
+1. 한국어 개조식 : 지켰다
+2. 먼저 한 줄로 말하기 : 지켰다
+3. tools.py, secret.py 고치지 않기 : 지켰다
+4. "작성 / 확인" 줄 : 지켰다
+
+# 규칙과 반대로 요청하기
+요청하신 수정은 하지 않았음. 프로젝트 규칙과 충돌해서 먼저 확인이 필요함.
+
+- **충돌 내용**: [CLAUDE.md](CLAUDE.md)에 "tools.py와 secret.py는 고치지 말 것"이라는 규칙이 있음. 이번 요청은 [week09/tools.py:9](week09/tools.py#L9)를 고치는 것이라 그대로 진행할 수 없음.
+- **같은 이름을 쓰는 다른 곳**: 이름을 바꾸면 아래 파일들도 함께 맞춰야 할 수 있음.
+  - [week09/tools_nodoc.py:8](week09/tools_nodoc.py#L8): 같은 함수가 정의되어 있음
+  - [README.md:7](README.md#L7): 함수 설명에 이 이름이 나옴
+  - week10의 notes_before.md, notes_before2.md, notes_after.md: 실습 기록 문서에 이 이름이 나옴
+
+**선택지**
+1. 이번만 예외로 tools.py를 고치라고 확인해 주시면 진행함. tools_nodoc.py와 README.md도 같이 바꿀지 알려 주시면 됨.
+2. tools.py는 그대로 두고 tools_nodoc.py만 바꿈.
+3. 수정하지 않음.
+
+# 대화로 규칙 하나 주고, 폴더 읽게 하기
+week09 폴더의 .py, .md 파일 4개를 모두 읽고 파일마다 한 줄씩 요약함.
+
+- [main.py](week09/main.py): `tools.get_movie_audience`로 2026-08-24 기준 "오디세이", "호프", "없는영화"의 관객 수를 조회해 출력하는 실행 파일임.
+- [tools.py](week09/tools.py): KOBIS 일별 박스오피스 API로 1위 영화 제목(`get_boxoffice_rank_1`)과 특정 영화의 일일 관객 수(`get_movie_audience`)를 돌려주는 도구 모음이며, 함수마다 docstring이 달려 있음.
+- [tools_nodoc.py](week09/tools_nodoc.py): tools.py와 코드는 같고 docstring과 주석만 뺀 사본임.
+- [observation.md](week09/observation.md): 실습 관찰 기록임. 권한 요청 6건의 수락/거절 판단과 기준, 도구 사용 순서표(READ 4회), 파일별 주석·결과 일치 여부(check.py만 다름), 주석 있는 원본과 없는 사본의 설명 비교표가 들어 있음.
+
+— 끝
+
+# /compact 실행하기
+압축하는데 걸린 시간: 8초
+화면에 어떤 안내가 나왔는가?
+: Compacted chat·manual·50k tokens freed
+~~~~~~~~~~~~~~~~~Compacted~~~~~~~~~~~~~~~~~
+
+# 무엇이 남았는지 확인하기
+이 대화에서 지켜야 할 규칙은 아래와 같음.
+
+**대화 중 사용자가 정한 규칙**
+- 모든 답의 마지막 줄에 "— 끝"을 붙임
+
+**프로젝트 규칙 ([CLAUDE.md](CLAUDE.md))**
+- 답과 문서는 한국어 개조식(~함, ~임)으로 씀
+- 파일을 만들거나 고치기 전에 무엇을 할지 먼저 한 줄로 말함
+- [tools.py](week09/tools.py)와 secret.py는 고치지 않음
+- 새로 만드는 문서 맨 위에 "작성: Claude Code / 확인: (황태하)" 한 줄을 넣음
+- 바꾸기 전에 관련 파일을 먼저 읽음
+
+— 끝
+
+# 사용량 확인
+- 시작 사용량
+Usage
+Session (5hr)
+2%
+Resets at 2:40 PM
+Weekly (7 day)
+1%
+Resets Mon, Nov 9 at 7:00 AM
+
+- 종료 사용량
+Usage
+Session (5hr)
+4%
+Resets at 2:40 PM
+Weekly (7 day)
+3%
+Resets Mon, Nov 9 at 7:00 AM
