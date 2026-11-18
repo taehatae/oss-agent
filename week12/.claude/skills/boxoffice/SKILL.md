@@ -1,6 +1,7 @@
 ---
 name: boxoffice
-description: (직접 쓸 것 — 무엇을 하는 스킬인지, 언제 써야 하는지 한 줄로)
+description: KOBIS 일별 박스오피스에서 특정 날짜의 1위 영화 제목과 특정 영화의 관객 수를 조회함. 사용자가 날짜별 박스오피스 1위나 영화 관객 수를 물을 때 사용.
+
 ---
 
 # 박스오피스 조회
@@ -11,8 +12,8 @@ description: (직접 쓸 것 — 무엇을 하는 스킬인지, 언제 써야 �
 
 week12 폴더에서 아래 명령을 실행한다. 날짜는 8자리(예: 20261114)로 쓴다.
 
-- 1위 영화 제목: (직접 쓸 것 — 설치한 뒤의 위치로 실행할 명령 한 줄)
-- 특정 영화의 관객 수: (직접 쓸 것 — 설치한 뒤의 위치로 실행할 명령 한 줄)
+- 1위 영화 제목: python .claude/skills/boxoffice/scripts/boxoffice.py rank 20261114
+- 특정 영화의 관객 수: python .claude/skills/boxoffice/scripts/boxoffice.py audience 20261114 "영화 제목"
 
 ## 지킬 것
 
